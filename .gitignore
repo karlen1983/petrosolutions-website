@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Cloudflare / OpenNext build outputs
+.open-next/
+.wrangler/
+
+# Public-only env values are committed so the build can read NEXT_PUBLIC_*
+# at build time. Never put secrets here — those go to `wrangler secret put`.
+!.env.production

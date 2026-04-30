@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "petro-solutions-website",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2024-12-30",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Non-secret runtime config. Secrets (SMTP_PASS, TURNSTILE_SECRET_KEY)
+  // are stored via `wrangler secret put` — see README.
+  "vars": {
+    "CONTACT_EMAIL": "info@omsps.com",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "SMTP_USER": "karlen1983@gmail.com"
+  }
+  // When the production domain is ready, wire it here, e.g.:
+  // "routes": [
+  //   { "pattern": "petrosolutions.com", "custom_domain": true },
+  //   { "pattern": "www.petrosolutions.com", "custom_domain": true }
+  // ]
+}

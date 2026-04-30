@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The dialhub site is a self-contained Next.js project that has its
+    // own build/lint pipeline. Keep it out of the petrosolutions lint pass.
+    "dialhub/**",
   ]),
 ]);
 

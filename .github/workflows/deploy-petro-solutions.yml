@@ -1,0 +1,57 @@
+name: Deploy Petro Solutions to Cloudflare
+
+on:
+  push:
+    branches: [main]
+    # Only run when files outside the dialhub site change. The /dialhub
+    # folder is a separate Next.js project with its own deploy pipeline
+    # and must NOT be deployed by this workflow.
+    paths-ignore:
+      - "dialhub/**"
+      - "**.md"
+      - ".gitignore"
+  workflow_dispatch: {}
+
+# Prevent overlapping deploys.
+concurrency:
+  group: petro-solutions-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build & Deploy (petro-solutions-website)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies (npm ci)
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build for Cloudflare (Next.js + OpenNext)
+        run: npx @opennextjs/cloudflare build
+
+      - name: Deploy with Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # The wrangler.jsonc at the repo root targets the
+          # `petro-solutions-website` Worker — separate from `dialhub`.
+          command: deploy
+          # Avoid re-running the build inside wrangler-action; we already
+          # built with @opennextjs/cloudflare in the step above.
+          packageManager: npm
