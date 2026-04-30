@@ -15,10 +15,10 @@
     "SMTP_HOST": "smtp.gmail.com",
     "SMTP_PORT": "587",
     "SMTP_USER": "karlen1983@gmail.com"
-  }
+  },
   // When the production domain is ready, wire it here, e.g.:
-  // "routes": [
-  //   { "pattern": "petrosolutions.com", "custom_domain": true },
-  //   { "pattern": "www.petrosolutions.com", "custom_domain": true }
-  // ]
+  "routes": [
+    { "pattern": "petrosolutions.dialhub.app", "custom_domain": true },
+    { "pattern": "www.petrosolutions.dialhub.app", "custom_domain": true }
+  ]
 }
