@@ -10,7 +10,6 @@ const inter = Inter({
   display: "swap",
 });
 
-
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
