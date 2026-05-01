@@ -87,7 +87,7 @@ export function Products() {
           <div className="relative aspect-[21/9] w-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/gallery/05-products-equipment-petroleum-hardware.jpg"
+              src="/gallery/fuel_equipment_showroom_systems.jpg"
               alt="Petroleum equipment and forecourt hardware"
               loading="lazy"
               className="h-full w-full object-cover"

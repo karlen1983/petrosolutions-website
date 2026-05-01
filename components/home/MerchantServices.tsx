@@ -70,7 +70,7 @@ export function MerchantServices() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/gallery/06-merchant-services-pay-at-pump.jpg"
+                  src="/gallery/contactless_payment_pump_closeup.jpg"
                   alt="Pay-at-the-pump merchant services in action"
                   loading="lazy"
                   className="h-full w-full object-cover"

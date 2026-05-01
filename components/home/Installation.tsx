@@ -77,7 +77,7 @@ export function Installation() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/gallery/04-installation-construction-underground-tank.jpg"
+                  src="/gallery/underground_fuel_tank_installation.jpg"
                   alt="Underground storage tank installation and construction"
                   loading="lazy"
                   className="h-full w-full object-cover"

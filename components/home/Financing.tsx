@@ -116,7 +116,7 @@ export function Financing() {
           <div className="relative min-h-[16rem] overflow-hidden border-t border-outline-variant md:col-span-5 md:min-h-0 md:border-l md:border-t-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/gallery/07-equipment-financing-project-planning.jpg"
+              src="/gallery/petro_solutions_consultation_meeting.jpg"
               alt="Equipment financing and project planning"
               loading="lazy"
               className="h-full w-full object-cover"

@@ -81,7 +81,7 @@ export function Services() {
           <div className="relative aspect-[21/9] w-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/gallery/02-service-maintenance-fuel-pump-technicians.jpg"
+              src="/gallery/fuel_dispenser_service_technicians.jpg"
               alt="Petro Solutions technicians servicing a fuel pump"
               loading="lazy"
               className="h-full w-full object-cover"
@@ -150,14 +150,14 @@ export function Services() {
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {[
             {
-              src: "/gallery/03-environmental-monitoring-atg-compliance.jpg",
+              src: "/gallery/technician_monitoring_fuel_system_tablet.jpg",
               eyebrow: "Compliance · ATG",
               title: "Environmental monitoring you can hand to a regulator.",
               description:
                 "ATG service, leak detection, and compliance reporting that keeps stations ahead of state and federal inspections.",
             },
             {
-              src: "/gallery/10-dispatch-operations-support.jpg",
+              src: "/gallery/operations_monitoring_control_room.jpg",
               eyebrow: "Dispatch · 24/7/365",
               title: "Computer-based dispatch with guaranteed response times.",
               description:

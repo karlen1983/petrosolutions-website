@@ -21,27 +21,27 @@ const heroStats = [
 // chosen to land within a typical scroll dwell.
 const heroImages = [
   {
-    src: "/gallery/01-homepage-modern-gas-station-hero.jpg",
+    src: "/gallery/gas_station_exterior_twilight.jpg",
     alt: "Modern fueling station forecourt — Petro Solutions hero shot",
     tag: "Modern station",
   },
   {
-    src: "/gallery/09-field-work-night-forecourt-service.jpg",
+    src: "/gallery/gas_station_maintenance_night.jpg",
     alt: "Night forecourt service work in progress",
     tag: "Forecourt · After hours",
   },
   {
-    src: "/gallery/04-installation-construction-underground-tank.jpg",
+    src: "/gallery/underground_fuel_tank_installation.jpg",
     alt: "Underground storage tank installation and construction",
     tag: "UST install · Construction",
   },
   {
-    src: "/gallery/02-service-maintenance-fuel-pump-technicians.jpg",
+    src: "/gallery/fuel_dispenser_service_technicians.jpg",
     alt: "Petro Solutions technicians servicing a fuel pump",
     tag: "Service · Maintenance",
   },
   {
-    src: "/gallery/06-merchant-services-pay-at-pump.jpg",
+    src: "/gallery/contactless_payment_pump_closeup.jpg",
     alt: "Merchant services and pay-at-pump processing",
     tag: "Merchant · Pay at pump",
   },
