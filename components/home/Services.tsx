@@ -70,7 +70,36 @@ export function Services() {
           description="Our technicians are factory-trained and held to the highest standards of professionalism, conduct, and craftsmanship — whether the job is a scheduled preventative visit or a station-down emergency."
         />
 
-        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-outline-variant bg-outline-variant sm:grid-cols-2 lg:grid-cols-3">
+        {/* Section banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.21, 0.45, 0.32, 0.94] }}
+          className="relative mt-12 overflow-hidden rounded-lg border border-outline-variant bg-surface-container"
+        >
+          <div className="relative aspect-[21/9] w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/gallery/02-service-maintenance-fuel-pump-technicians.jpg"
+              alt="Petro Solutions technicians servicing a fuel pump"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/30 to-transparent" />
+          </div>
+          <div className="absolute inset-y-0 left-0 flex max-w-md flex-col justify-center px-6 py-6 text-on-primary sm:px-10">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-surface-container-lowest/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-on-primary backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-chartreuse" />
+              Factory-authorized techs
+            </span>
+            <p className="mt-3 font-display text-lg font-bold leading-tight tracking-tight sm:text-2xl">
+              Trained on the equipment we install — on call when you need them.
+            </p>
+          </div>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-outline-variant bg-outline-variant sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <motion.article
               key={service.title}
@@ -114,6 +143,61 @@ export function Services() {
               <Icon size={14} strokeWidth={2} className="text-primary-container" />
               {label}
             </span>
+          ))}
+        </div>
+
+        {/* Featured capability callouts */}
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {[
+            {
+              src: "/gallery/03-environmental-monitoring-atg-compliance.jpg",
+              eyebrow: "Compliance · ATG",
+              title: "Environmental monitoring you can hand to a regulator.",
+              description:
+                "ATG service, leak detection, and compliance reporting that keeps stations ahead of state and federal inspections.",
+            },
+            {
+              src: "/gallery/10-dispatch-operations-support.jpg",
+              eyebrow: "Dispatch · 24/7/365",
+              title: "Computer-based dispatch with guaranteed response times.",
+              description:
+                "Radio- and computer-dispatched response routes the right tech with the right parts to your forecourt fast.",
+            },
+          ].map((item, i) => (
+            <motion.article
+              key={item.eyebrow}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.55,
+                delay: i * 0.08,
+                ease: [0.21, 0.45, 0.32, 0.94],
+              }}
+              className="group relative overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+                <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-surface-container-lowest/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-primary-container shadow-[0_4px_16px_rgba(31,75,90,0.18)] backdrop-blur">
+                  {item.eyebrow}
+                </span>
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-lg font-bold tracking-tight text-on-surface">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
+                  {item.description}
+                </p>
+              </div>
+            </motion.article>
           ))}
         </div>
 

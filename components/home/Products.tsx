@@ -76,6 +76,35 @@ export function Products() {
           description="Petro Solutions is an authorized distributor for the brands the petroleum retail industry trusts. We sell, install, and provide in-house repair on every system we ship."
         />
 
+        {/* Section banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.21, 0.45, 0.32, 0.94] }}
+          className="relative mt-12 overflow-hidden rounded-lg border border-outline-variant bg-surface-container"
+        >
+          <div className="relative aspect-[21/9] w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/gallery/05-products-equipment-petroleum-hardware.jpg"
+              alt="Petroleum equipment and forecourt hardware"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/30 to-transparent" />
+          </div>
+          <div className="absolute inset-y-0 left-0 flex max-w-md flex-col justify-center px-6 py-6 text-on-primary sm:px-10">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-surface-container-lowest/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-on-primary backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-chartreuse" />
+              Authorized distributor
+            </span>
+            <p className="mt-3 font-display text-lg font-bold leading-tight tracking-tight sm:text-2xl">
+              Wayne, OPW, Veeder-Root, Verifone — sold, installed, and serviced in-house.
+            </p>
+          </div>
+        </motion.div>
+
         {/* Authorized brands strip */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}

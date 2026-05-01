@@ -1,8 +1,14 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { ArrowRight, ShieldCheck, Phone } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const heroStats = [
@@ -11,14 +17,59 @@ const heroStats = [
   { value: "1 team", label: "Equipment + payments" },
 ];
 
+// Curated hero rotation sourced from /public/gallery — five branded shots
+// chosen to land within a typical scroll dwell.
+const heroImages = [
+  {
+    src: "/gallery/01-homepage-modern-gas-station-hero.jpg",
+    alt: "Modern fueling station forecourt — Petro Solutions hero shot",
+    tag: "Modern station",
+  },
+  {
+    src: "/gallery/09-field-work-night-forecourt-service.jpg",
+    alt: "Night forecourt service work in progress",
+    tag: "Forecourt · After hours",
+  },
+  {
+    src: "/gallery/04-installation-construction-underground-tank.jpg",
+    alt: "Underground storage tank installation and construction",
+    tag: "UST install · Construction",
+  },
+  {
+    src: "/gallery/02-service-maintenance-fuel-pump-technicians.jpg",
+    alt: "Petro Solutions technicians servicing a fuel pump",
+    tag: "Service · Maintenance",
+  },
+  {
+    src: "/gallery/06-merchant-services-pay-at-pump.jpg",
+    alt: "Merchant services and pay-at-pump processing",
+    tag: "Merchant · Pay at pump",
+  },
+];
+
+const SLIDE_MS = 4800;
+
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 60]);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % heroImages.length);
+    }, SLIDE_MS);
+    return () => window.clearInterval(id);
+  }, [prefersReducedMotion]);
+
+  const current = heroImages[active];
 
   return (
     <section
@@ -36,10 +87,37 @@ export function Hero() {
           backgroundSize: "48px 48px",
         }}
       />
-      {/* Soft accent wash */}
-      <div
+      {/* Animated soft accent washes */}
+      <motion.div
         aria-hidden
+        initial={{ opacity: 0.5, scale: 0.9 }}
+        animate={
+          prefersReducedMotion
+            ? { opacity: 0.6 }
+            : { opacity: [0.5, 0.85, 0.5], scale: [0.9, 1.05, 0.9] }
+        }
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-container/10 blur-3xl"
+      />
+      <motion.div
+        aria-hidden
+        initial={{ opacity: 0.4, scale: 1.05 }}
+        animate={
+          prefersReducedMotion
+            ? { opacity: 0.4 }
+            : { opacity: [0.4, 0.7, 0.4], scale: [1.05, 0.92, 1.05] }
+        }
+        transition={{
+          duration: 11,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.5,
+        }}
+        className="pointer-events-none absolute -bottom-48 -left-32 h-[24rem] w-[24rem] rounded-full bg-chartreuse/10 blur-3xl"
       />
 
       <div className="relative mx-auto grid max-w-[1440px] items-center gap-12 px-4 md:px-6 lg:grid-cols-12 lg:gap-16 lg:px-16">
@@ -90,7 +168,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Visual column */}
+        {/* Visual column — animated banner */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -101,23 +179,115 @@ export function Hero() {
           }}
           className="relative lg:col-span-5"
         >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-outline-variant bg-surface-container">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-outline-variant bg-surface-container shadow-[0_20px_60px_rgba(31,75,90,0.18)]">
+            {/* Parallax shell */}
             <motion.div
               style={{ y: imageY, scale: imageScale }}
               className="absolute inset-0 h-full w-full"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1695561324569-5e47c76dc0a3?w=1400&q=85&auto=format&fit=crop"
-                alt="Modern fueling station at night with illuminated dispensers and canopy"
-                className="h-full w-full object-cover"
-              />
+              <AnimatePresence initial={false} mode="sync">
+                <motion.div
+                  key={current.src}
+                  initial={{ opacity: 0, scale: 1.08 }}
+                  animate={{ opacity: 1, scale: 1.16 }}
+                  exit={{ opacity: 0, scale: 1.22 }}
+                  transition={{
+                    opacity: {
+                      duration: 1.2,
+                      ease: [0.4, 0, 0.2, 1],
+                    },
+                    scale: {
+                      duration: SLIDE_MS / 1000 + 1.2,
+                      ease: "linear",
+                    },
+                  }}
+                  className="absolute inset-0 h-full w-full"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={current.src}
+                    alt={current.alt}
+                    className="h-full w-full object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
             </motion.div>
+
+            {/* Color wash + bottom vignette for legibility */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/45 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/70 via-primary/15 to-transparent" />
+
+            {/* Animated scan line accent */}
+            {!prefersReducedMotion && (
+              <motion.div
+                aria-hidden
+                initial={{ y: "-10%", opacity: 0 }}
+                animate={{ y: "110%", opacity: [0, 0.6, 0] }}
+                transition={{
+                  duration: 4.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  repeatDelay: 1.4,
+                }}
+                className="pointer-events-none absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-chartreuse/30 to-transparent mix-blend-screen"
+              />
+            )}
+
             {/* Floating credential pill */}
             <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-surface-container-lowest/95 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary-container shadow-[0_4px_16px_rgba(31,75,90,0.15)] backdrop-blur">
               <ShieldCheck size={12} strokeWidth={2.4} />
               Authorized · Wayne · OPW · Verifone
+            </div>
+
+            {/* Animated caption */}
+            <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-3">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={current.tag}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.5, ease: [0.21, 0.45, 0.32, 0.94] }}
+                  className="rounded-full bg-surface-container-lowest/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary-container shadow-[0_4px_16px_rgba(0,0,0,0.18)] backdrop-blur"
+                >
+                  {current.tag}
+                </motion.span>
+              </AnimatePresence>
+
+              {/* Slide indicators */}
+              <div className="flex items-center gap-1.5">
+                {heroImages.map((img, idx) => {
+                  const isActive = idx === active;
+                  return (
+                    <button
+                      key={img.src}
+                      type="button"
+                      onClick={() => setActive(idx)}
+                      aria-label={`Show image ${idx + 1} of ${heroImages.length}`}
+                      aria-current={isActive ? "true" : undefined}
+                      className="group relative h-1.5 overflow-hidden rounded-full bg-on-primary/40 transition-all duration-300"
+                      style={{ width: isActive ? 28 : 10 }}
+                    >
+                      {isActive && !prefersReducedMotion && (
+                        <motion.span
+                          key={`progress-${active}`}
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: 1 }}
+                          transition={{
+                            duration: SLIDE_MS / 1000,
+                            ease: "linear",
+                          }}
+                          style={{ transformOrigin: "left" }}
+                          className="absolute inset-0 rounded-full bg-chartreuse"
+                        />
+                      )}
+                      {isActive && prefersReducedMotion && (
+                        <span className="absolute inset-0 rounded-full bg-chartreuse" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 

@@ -30,16 +30,17 @@ export function PetroFooter() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <span
-                aria-hidden
-                className="grid h-10 w-10 place-items-center rounded-md bg-primary-container text-on-primary font-display text-sm font-bold tracking-tight"
-              >
-                PS
-              </span>
-              <span className="font-display text-lg font-bold tracking-tight text-on-surface">
-                Petro Solutions
-              </span>
+            <Link
+              href="/"
+              className="inline-flex items-center"
+              aria-label="Petro Solutions — home"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/petro-solutions/petroLogo.png"
+                alt="Petro Solutions, a division of Orion Merchant Solutions"
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-on-surface-variant">
               Sales, service, and installation of petroleum equipment — paired

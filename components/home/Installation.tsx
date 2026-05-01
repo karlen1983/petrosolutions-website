@@ -67,7 +67,34 @@ export function Installation() {
               description="Installation supervisors specialized in fluid-handling equipment lead every project. Crews are HAZWOPER-trained, drug-free certified, and backed by comprehensive general liability insurance — so you can hand off the build with confidence."
             />
 
-            <ul className="mt-10 grid grid-cols-1 gap-3 text-sm text-on-surface-variant sm:grid-cols-2">
+            <motion.figure
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.21, 0.45, 0.32, 0.94] }}
+              className="relative mt-10 overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/gallery/04-installation-construction-underground-tank.jpg"
+                  alt="Underground storage tank installation and construction"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
+              </div>
+              <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 px-5 py-4 text-on-primary">
+                <span className="text-sm font-semibold tracking-tight">
+                  Underground tank install
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-on-primary-container">
+                  Turnkey · HAZWOPER
+                </span>
+              </figcaption>
+            </motion.figure>
+
+            <ul className="mt-8 grid grid-cols-1 gap-3 text-sm text-on-surface-variant sm:grid-cols-2">
               {credentials.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckCircle2

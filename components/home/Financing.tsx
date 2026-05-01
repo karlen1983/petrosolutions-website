@@ -78,9 +78,9 @@ export function Financing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.21, 0.45, 0.32, 0.94] }}
-          className="mt-14 grid items-center gap-6 rounded-lg border border-outline-variant bg-surface-container-lowest p-8 sm:p-10 md:grid-cols-12"
+          className="mt-14 grid items-stretch overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest md:grid-cols-12"
         >
-          <div className="md:col-span-8">
+          <div className="flex flex-col justify-center p-8 sm:p-10 md:col-span-7">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-container">
               OMSPS Credit Application
             </p>
@@ -92,24 +92,39 @@ export function Financing() {
               with next steps. Prefer to talk first? The team is happy to walk
               through it alongside the equipment and install.
             </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <a
+                href={CREDIT_APPLICATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary-container px-5 py-3 text-sm font-semibold tracking-wide text-on-primary transition-all duration-200 hover:bg-primary hover:shadow-[0_8px_24px_rgba(31,75,90,0.25)] active:scale-[0.98]"
+              >
+                <Download size={16} strokeWidth={2.2} />
+                Download application (PDF)
+              </a>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-container hover:text-primary"
+              >
+                Or talk to us first
+                <ArrowRight size={14} strokeWidth={2.2} />
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-col gap-3 md:col-span-4 md:items-end">
-            <a
-              href={CREDIT_APPLICATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary-container px-5 py-3 text-sm font-semibold tracking-wide text-on-primary transition-all duration-200 hover:bg-primary hover:shadow-[0_8px_24px_rgba(31,75,90,0.25)] active:scale-[0.98]"
-            >
-              <Download size={16} strokeWidth={2.2} />
-              Download application (PDF)
-            </a>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-container hover:text-primary"
-            >
-              Or talk to us first
-              <ArrowRight size={14} strokeWidth={2.2} />
-            </Link>
+
+          <div className="relative min-h-[16rem] overflow-hidden border-t border-outline-variant md:col-span-5 md:min-h-0 md:border-l md:border-t-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/gallery/07-equipment-financing-project-planning.jpg"
+              alt="Equipment financing and project planning"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/55 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-surface-container-lowest/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-primary-container shadow-[0_4px_16px_rgba(31,75,90,0.18)] backdrop-blur">
+              Project planning
+            </span>
           </div>
         </motion.div>
       </div>

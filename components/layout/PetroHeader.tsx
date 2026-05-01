@@ -24,17 +24,15 @@ export function PetroHeader() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 whitespace-nowrap"
+          className="flex items-center whitespace-nowrap"
+          aria-label="Petro Solutions — home"
         >
-          <span
-            aria-hidden
-            className="grid h-9 w-9 place-items-center rounded-md bg-primary-container text-on-primary font-display text-sm font-bold tracking-tight"
-          >
-            PS
-          </span>
-          <span className="font-display text-base font-bold tracking-tight text-on-surface">
-            Petro Solutions
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/petro-solutions/petroLogo.png"
+            alt="Petro Solutions, a division of Orion Merchant Solutions"
+            className="h-10 w-auto sm:h-11"
+          />
         </Link>
 
         {/* Desktop links — push to the right */}
