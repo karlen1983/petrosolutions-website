@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { PetroHeader } from "@/components/layout/PetroHeader";
 import { PetroFooter } from "@/components/layout/PetroFooter";
+import { HashScrollHandler } from "@/components/layout/HashScrollHandler";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -78,6 +79,7 @@ export default function RootLayout({
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <HashScrollHandler />
         <PetroHeader />
         <main className="flex-1">{children}</main>
         <PetroFooter />
