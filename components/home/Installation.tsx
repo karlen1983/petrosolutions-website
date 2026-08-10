@@ -56,12 +56,14 @@ export function Installation() {
   return (
     <section
       id="installation"
+      aria-labelledby="installation-title"
       className="bg-surface-container-low py-24 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHeader
+              titleId="installation-title"
               eyebrow="Installation & Construction"
               title="Greenfield builds. Major retrofits. Done right."
               description="Installation supervisors specialized in fluid-handling equipment lead every project. Crews are HAZWOPER-trained, drug-free certified, and backed by comprehensive general liability insurance — so you can hand off the build with confidence."

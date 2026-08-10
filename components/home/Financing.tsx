@@ -37,9 +37,14 @@ const points = [
 
 export function Financing() {
   return (
-    <section id="financing" className="py-24 lg:py-32">
+    <section
+      id="financing"
+      aria-labelledby="financing-title"
+      className="py-24 lg:py-32"
+    >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
         <SectionHeader
+          titleId="financing-title"
           eyebrow="Financing"
           title="Equipment financing, paired with the install."
           description="Spread the cost of new petroleum equipment and retrofits across terms that match your station. Start with our credit application — we'll follow up to scope the right structure alongside the project."

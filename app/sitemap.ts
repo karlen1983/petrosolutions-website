@@ -1,68 +1,41 @@
 import type { MetadataRoute } from "next";
+import { absoluteUrl } from "@/lib/site";
 
-const BASE_URL = "https://petrosolutions.com";
+/**
+ * Matches the "Last updated" date rendered on /privacy and /terms.
+ * Keep in sync when those pages change.
+ */
+const LEGAL_LAST_MODIFIED = new Date("2026-04-30T00:00:00.000Z");
 
+/**
+ * Only canonical, indexable page URLs belong here.
+ *
+ * The homepage section anchors (#services, #products, #contact, ...) are
+ * intentionally excluded: a fragment is not a distinct URL, so listing them
+ * submits the same page eight times. Those sections are still discoverable via
+ * the in-page navigation and /llms.txt.
+ *
+ * /api/* is excluded — it is disallowed in robots.ts and is not public content.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const buildDate = new Date();
 
   return [
     {
-      url: BASE_URL,
-      lastModified: now,
+      url: absoluteUrl("/"),
+      lastModified: buildDate,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/#services`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/#installation`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/#products`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/#merchant`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/#financing`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/#about`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/#contact`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/privacy`,
-      lastModified: now,
+      url: absoluteUrl("/privacy"),
+      lastModified: LEGAL_LAST_MODIFIED,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: `${BASE_URL}/terms`,
-      lastModified: now,
+      url: absoluteUrl("/terms"),
+      lastModified: LEGAL_LAST_MODIFIED,
       changeFrequency: "yearly",
       priority: 0.3,
     },

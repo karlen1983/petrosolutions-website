@@ -62,9 +62,14 @@ const extras = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 lg:py-32">
+    <section
+      id="services"
+      aria-labelledby="services-title"
+      className="py-24 lg:py-32"
+    >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
         <SectionHeader
+          titleId="services-title"
           eyebrow="Service & Maintenance"
           title="Keep every gallon flowing."
           description="Our technicians are factory-trained and held to the highest standards of professionalism, conduct, and craftsmanship — whether the job is a scheduled preventative visit or a station-down emergency."

@@ -61,12 +61,17 @@ const offices = [
 
 export function About() {
   return (
-    <section id="about" className="bg-surface-container-low py-24 lg:py-32">
+    <section
+      id="about"
+      aria-labelledby="about-title"
+      className="bg-surface-container-low py-24 lg:py-32"
+    >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           {/* Left column */}
           <div className="lg:col-span-6">
             <SectionHeader
+              titleId="about-title"
               eyebrow="About"
               title="A petroleum partner, not a vendor."
               description="Petro Solutions and Orion Merchant Solutions provide a multi-dimensional service experience to customers in the gasoline retail industry — quality sales, service, and installation of petroleum equipment, paired with credit card processing under one roof."

@@ -195,9 +195,14 @@ export function Gallery() {
     lightboxIdx !== null ? allProjects[lightboxIdx] : null;
 
   return (
-    <section id="gallery" className="py-24 lg:py-32">
+    <section
+      id="gallery"
+      aria-labelledby="gallery-title"
+      className="py-24 lg:py-32"
+    >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
         <SectionHeader
+          titleId="gallery-title"
           eyebrow="Field Work"
           title="A look at the projects we keep online."
           description="Stations, retrofits, and equipment installs delivered across Florida and Louisiana — every photo is one of ours."

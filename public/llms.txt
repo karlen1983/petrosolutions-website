@@ -1,0 +1,51 @@
+# Petro Solutions
+
+> Petro Solutions sells, installs, services, and maintains petroleum equipment for gasoline retail stations, convenience stores, and commercial fueling sites, and — through Orion Merchant Solutions — provides the card processing that runs on that equipment. Field service is dispatched from offices in Doral, Florida and Holden, Louisiana; equipment ships nationwide.
+
+Petro Solutions works only in petroleum. Its defining characteristic is scope: the same company supplies the equipment, performs the installation or forecourt construction, services it afterward, and handles the merchant processing — so an operator deals with one vendor and one contact point instead of separate equipment, construction, and payment vendors.
+
+The company is an authorized distributor and factory-authorized service provider for Wayne, OPW, Verifone, Veeder-Root, Bennett, and Gilbarco. It holds Florida contractor licenses CBC 1257332 (Certified Building Contractor) and PCC 1256882 (Pollutant Storage Contractor). Crews are HAZWOPER trained, drug-free workplace certified, and covered by comprehensive general liability insurance. Merchant services are delivered through Orion Merchant Solutions, a registered Independent Sales Organization of Wells Fargo Bank, N.A. and an authorized reseller of Clover payment technology by First Data.
+
+This is a single-page marketing site: the sections below are anchors on the homepage rather than separate documents.
+
+## Main Pages
+
+- [Home](https://petrosolutions.com/): Full overview of Petro Solutions — petroleum equipment sales, installation and construction, 24/7/365 service, merchant processing, financing, service area, credentials, and contact details.
+- [Contact & Locations](https://petrosolutions.com/#contact): Service request form, toll-free dispatch line 1-877-847-3876, email info@omsps.com, both office addresses with phone and fax numbers, and business hours (Mon–Fri 9:00am–5:00pm, with 24/7/365 emergency dispatch).
+- [About Petro Solutions](https://petrosolutions.com/#about): Company mission, operating values, OEM authorizations, certifications, license numbers, the two regional offices, and coverage area.
+- [Why Petro Solutions](https://petrosolutions.com/#why): Explanation of the combined petroleum-service and merchant-processing model, and the Gulf Coast regional focus.
+- [Field Work](https://petrosolutions.com/#gallery): Photographs of installation, service, forecourt, and control-room work.
+
+## Services
+
+- [Service & Maintenance](https://petrosolutions.com/#services): 24/7/365 factory-authorized maintenance on petroleum equipment; preventative and fixed-cost service agreements; environmental compliance inspections, monitoring, and reporting; POS and forecourt security support; complete c-store equipment repair including walk-in coolers and lighting; radio and computer-based dispatch with guaranteed response times. Also covers ATG service, dispenser repair, lighting maintenance, and compliance reporting.
+- [Installation & Construction](https://petrosolutions.com/#installation): Turnkey petroleum installations run in four phases — pre-construction meeting, construction and install (including demolition and removal of legacy systems and aboveground or underground tank, dispenser, sump, and forecourt buildout), commissioning with calibration, leak testing, ATG setup, POS integration and operator training, and a two-week post-install inspection.
+- [Merchant Services](https://petrosolutions.com/#merchant): Credit card processing for independent stations through Orion Merchant Solutions — EMV-ready pay-at-the-pump integrated with the dispensers and forecourt controllers installed, plus in-store POS for c-stores, restaurants, and supermarkets including Clover technology, competitive processing rates with data compliance standards, and 24/7 merchant support.
+- [Financing](https://petrosolutions.com/#financing): Equipment financing for dispensers, tanks, ATGs, POS systems, and full forecourt builds, scoped alongside the installation project and started with a single OMSPS credit application.
+
+## Products & Equipment
+
+- [Products Overview](https://petrosolutions.com/#products): Authorized distribution with in-house installation and repair across all categories below.
+- Fuel dispensers: retail, commercial, and high-flow units from Wayne, Gilbarco, and Bennett.
+- Storage tanks and piping: aboveground and underground systems, fiberglass and steel, with piping, containment sumps, and accessory packages.
+- ATG and leak detection: automatic tank gauging and environmental monitoring tied to compliance reporting, including Veeder-Root TLS, OPW, and statistical leak detection.
+- POS and forecourt controllers: PCI-ready point-of-sale and payment systems, Verifone, EMV pin pads, and forecourt controllers integrated with the installed dispensers.
+- Security systems: DVR/NVR camera systems, remote viewing, forecourt audio, and alarms built for petroleum retail environments.
+- C-store and ancillary equipment: walk-in coolers, air and water units, price signs, and lighting.
+
+## Company Facts
+
+- Service area: Florida and Louisiana for field service and installation; equipment ships nationwide.
+- Florida headquarters: 5200 NW 77th Court, Doral, FL 33166 — phone 305-883-8687, fax 305-883-8862.
+- Louisiana office: 26904 James Chapel Road N, Holden, LA 70744 — phone 985-520-5801, fax 985-520-5815.
+- Toll-free service and dispatch: 1-877-847-3876. Email: info@omsps.com.
+- Business hours: Monday–Friday, 9:00am–5:00pm, with 24/7/365 emergency dispatch on the toll-free line.
+- Licenses: Florida Certified Building Contractor CBC 1257332; Florida Pollutant Storage Contractor PCC 1256882.
+- Authorized brands: Wayne, OPW, Verifone, Veeder-Root, Bennett, Gilbarco.
+- Mission statement: to provide the best equipment and installation of petroleum products, along with efficient service, while maintaining the highest ethical and safety standards in the industry.
+
+## Optional
+
+- [Privacy Policy](https://petrosolutions.com/privacy): How information submitted through the site's contact form is collected, used, and retained. States that the site does not track or profile visitors and does not sell personal data.
+- [Terms of Service](https://petrosolutions.com/terms): Conditions of use for the website, accuracy disclaimers, limitation of liability, and intellectual property notice.
+- [OMSPS Credit Application (PDF)](https://petrosolutions.com/petro-solutions/OMSPS_Credit_Application.pdf): Downloadable credit application used to begin an equipment financing conversation.

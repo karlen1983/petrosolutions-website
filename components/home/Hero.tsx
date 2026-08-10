@@ -75,6 +75,7 @@ export function Hero() {
     <section
       ref={ref}
       id="home"
+      aria-labelledby="hero-title"
       className="relative overflow-hidden bg-surface pb-20 pt-16 lg:pb-28 lg:pt-24"
     >
       {/* Subtle grid texture */}
@@ -133,7 +134,10 @@ export function Hero() {
             Petroleum equipment &amp; merchant services
           </span>
 
-          <h1 className="mt-6 font-display text-[2.5rem] font-extrabold leading-[1.05] tracking-tight text-on-surface sm:text-5xl lg:text-[4.25rem]">
+          <h1
+            id="hero-title"
+            className="mt-6 font-display text-[2.5rem] font-extrabold leading-[1.05] tracking-tight text-on-surface sm:text-5xl lg:text-[4.25rem]"
+          >
             One team for the equipment,{" "}
             <span className="text-primary-container">
               the install, and the payments.

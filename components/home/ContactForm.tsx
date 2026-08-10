@@ -96,6 +96,7 @@ export function ContactForm() {
   return (
     <section
       id="contact"
+      aria-labelledby="contact-title"
       className="bg-surface-container-low py-24 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
@@ -108,6 +109,7 @@ export function ContactForm() {
             className="lg:col-span-7"
           >
             <SectionHeader
+              titleId="contact-title"
               eyebrow="Contact"
               title="Request service or a quote."
               description="Tell us what you need and we'll route the request to the right team. For station-down emergencies, please call dispatch directly."

@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { absoluteUrl } from "@/lib/site";
+
+const DESCRIPTION =
+  "Terms governing your use of the Petro Solutions website, including disclaimers regarding accuracy of information and limitation of liability.";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description:
-    "Terms governing your use of the Petro Solutions website, including disclaimers regarding accuracy of information and limitation of liability.",
-  alternates: { canonical: "https://petrosolutions.com/terms" },
+  description: DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/terms") },
+  openGraph: {
+    type: "article",
+    url: absoluteUrl("/terms"),
+    title: "Terms of Service | Petro Solutions",
+    description: DESCRIPTION,
+    siteName: "Petro Solutions",
+    locale: "en_US",
+  },
 };
 
 const LAST_UPDATED = "April 30, 2026";

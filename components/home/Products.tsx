@@ -68,9 +68,14 @@ const categories = [
 
 export function Products() {
   return (
-    <section id="products" className="py-24 lg:py-32">
+    <section
+      id="products"
+      aria-labelledby="products-title"
+      className="py-24 lg:py-32"
+    >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
         <SectionHeader
+          titleId="products-title"
           eyebrow="Products & Equipment"
           title="The hardware behind every fueling site."
           description="Petro Solutions is an authorized distributor for the brands the petroleum retail industry trusts. We sell, install, and provide in-house repair on every system we ship."

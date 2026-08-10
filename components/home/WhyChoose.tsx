@@ -32,6 +32,7 @@ export function WhyChoose() {
   return (
     <section
       id="why"
+      aria-labelledby="why-title"
       className="bg-primary text-on-primary py-24 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-16">
@@ -40,7 +41,10 @@ export function WhyChoose() {
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-on-primary-container">
               Why Petro Solutions
             </p>
-            <h2 className="mt-4 font-display text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]">
+            <h2
+              id="why-title"
+              className="mt-4 font-display text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]"
+            >
               The team petroleum operators call when downtime isn&apos;t an
               option.
             </h2>

@@ -4,6 +4,13 @@ import "./globals.css";
 import { PetroHeader } from "@/components/layout/PetroHeader";
 import { PetroFooter } from "@/components/layout/PetroFooter";
 import { HashScrollHandler } from "@/components/layout/HashScrollHandler";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_OG_IMAGE,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,10 +24,8 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const SITE_URL = "https://petrosolutions.com";
-const TITLE = "Petro Solutions | Petroleum Equipment, Service & Installation";
-const DESCRIPTION =
-  "Petro Solutions provides sales, service, and installation of petroleum equipment — fuel storage tanks, dispensers, ATGs, POS, and forecourt systems — paired with merchant services through Orion Merchant Solutions. Serving Florida and Louisiana with nationwide shipping.";
+const TITLE = SITE_TITLE;
+const DESCRIPTION = SITE_DESCRIPTION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -51,13 +56,22 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: TITLE,
     description: DESCRIPTION,
-    siteName: "Petro Solutions",
+    siteName: SITE_NAME,
     locale: "en_US",
+    images: [
+      {
+        url: SITE_OG_IMAGE,
+        width: 2048,
+        height: 1152,
+        alt: "Petro Solutions — fueling station forecourt at twilight",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [SITE_OG_IMAGE],
   },
   alternates: {
     canonical: SITE_URL,
@@ -65,6 +79,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 };
 

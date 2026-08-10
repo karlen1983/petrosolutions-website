@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { absoluteUrl } from "@/lib/site";
+
+const DESCRIPTION =
+  "How Petro Solutions handles information collected through this website, including the contact form. We do not track visitors and do not sell personal data.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description:
-    "How Petro Solutions handles information collected through this website, including the contact form. We do not track visitors and do not sell personal data.",
-  alternates: { canonical: "https://petrosolutions.com/privacy" },
+  description: DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/privacy") },
+  openGraph: {
+    type: "article",
+    url: absoluteUrl("/privacy"),
+    title: "Privacy Policy | Petro Solutions",
+    description: DESCRIPTION,
+    siteName: "Petro Solutions",
+    locale: "en_US",
+  },
 };
 
 const LAST_UPDATED = "April 30, 2026";
